@@ -24,8 +24,6 @@ const AddNewCategory = () => {
 
   // Handle form submission
   const onSubmit = (values, { resetForm }) => {
-    // Submit logic here
-    console.log(values);
     dispatch(
       category
         ? updateCategory({

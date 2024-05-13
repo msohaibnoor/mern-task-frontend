@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import axiosInstance from "../../interceptor";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
@@ -23,6 +24,7 @@ export const logout = createAsyncThunk("logout", async ({ apiEndpoint, requestDa
 export const signUp = createAsyncThunk("signUp", async ({ apiEndpoint, requestData }, thunkAPI) => {
   try {
     const response = await axiosInstance.post(apiEndpoint, requestData);
+    toast.success("Check your email for instructions.");
     return response.data.data.email;
   } catch (error) {
     return thunkAPI.rejectWithValue(error?.response?.data);

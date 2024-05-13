@@ -73,7 +73,6 @@ function Categories() {
     ],
     []
   );
-  console.log({ pageNumber });
   return (
     <div className="mt-8 flex justify-center items-center flex-col">
       <div className="w-4/5 flex items-center justify-between mb-5">

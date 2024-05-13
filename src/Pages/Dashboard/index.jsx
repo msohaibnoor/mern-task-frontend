@@ -6,7 +6,6 @@ import { getCarCount } from "../../Redux/features/Cars/carApi";
 const Dashboard = ({ totalCars }) => {
   const dispatch = useDispatch();
   const { carCount } = useSelector((state) => state.cars);
-  console.log(carCount);
   useEffect(() => {
     dispatch(
       getCarCount({

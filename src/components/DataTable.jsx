@@ -25,7 +25,6 @@ const DataTable = ({ columns, data, pageNumber, setPageNumber, limit, pageCount 
     useSortBy,
     usePagination
   );
-  // console.log({ pageIndex, pageNumber, canNextPage, pageCount });
 
   const handleNextPage = () => {
     if (pageNumber < pageCount) {
@@ -77,10 +76,6 @@ const DataTable = ({ columns, data, pageNumber, setPageNumber, limit, pageCount 
           </table>
           <div className="mt-4 flex justify-between items-center">
             <button
-              // onClick={() => {
-              //   setPageNumber(--pageIndex);
-              //   previousPage();
-              // }}
               onClick={handlePreviousPage}
               disabled={!canPreviousPage || pageNumber === 0}
               className="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg focus:outline-none"
@@ -94,10 +89,6 @@ const DataTable = ({ columns, data, pageNumber, setPageNumber, limit, pageCount 
               </em>
             </div>
             <button
-              // onClick={() => {
-              //   setPageNumber(++pageIndex);
-              //   nextPage();
-              // }}
               onClick={handleNextPage}
               disabled={!canNextPage || pageNumber === pageCount}
               className="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg focus:outline-none"

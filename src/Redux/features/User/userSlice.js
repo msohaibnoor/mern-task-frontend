@@ -20,10 +20,7 @@ export const userSlice = createSlice({
         state.loading = "pending";
       })
       .addCase(login.fulfilled, (state, action) => {
-        console.log("payloaddd");
-        console.log(action.payload);
         state.loading = "succeeded";
-        state.isGuest = false;
         state.user = { ...action.payload.user, tokens: action.payload.tokens };
       })
       .addCase(login.rejected, (state, action) => {

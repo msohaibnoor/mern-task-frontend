@@ -41,8 +41,6 @@ axiosInstance.interceptors.response.use(
   },
   (error) => {
     const { response } = error;
-    console.log("error   response");
-    console.log(response);
     toast.error(response?.data?.message);
 
     if (response && response.status === 401) {

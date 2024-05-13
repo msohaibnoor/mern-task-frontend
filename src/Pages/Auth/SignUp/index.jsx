@@ -35,7 +35,6 @@ const SignUpForm = () => {
             name: Yup.string().min(3).max(50).required("Name is required")
           })}
           onSubmit={async (values) => {
-            console.log(values);
             try {
               dispatch(
                 signUp({
@@ -48,14 +47,6 @@ const SignUpForm = () => {
               console.log(err);
               toast.error(err?.data?.data?.message || err.error);
             }
-            // await dispatch(setLoader(true));
-            // dispatch(
-            //     login({
-            //         email: values.email,
-            //         name: values.name,
-            //         navigate: navigate
-            //     })
-            // );
           }}
         >
           {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (

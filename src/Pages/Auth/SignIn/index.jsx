@@ -1,75 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { Navigate , useNavigate} from "react-router-dom";
-// import { login } from "../../../Redux/features/User/userApi";
-
-// const LoginForm = () => {
-//   const navigate = useNavigate();
-//   const dispatch = useDispatch();
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const { loading, error } = useSelector((state) => state.user);
-//   const user = useSelector((state) => state.user);
-//   console.log(user)
-
-//   const [redirectToDashboard, setRedirectToDashboard] = useState(false);
-
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       await dispatch(
-//         login({
-//           apiEndpoint: "auth/login",
-//           requestData: { email, password },
-//         })
-//       );
-
-//     } catch (error) {
-//       console.error("Login failed:", error);
-//     }
-//   };
-
-// useEffect(() => {
-//   if(user.user){
-//     // setRedirectToDashboard(true)
-//     navigate('/dashboard')
-//   }
-// },[user])
-
-//   return (
-//     <div>
-//       {error && <div className="error-message">{error}</div>}
-//       <form onSubmit={handleLogin}>
-//         <div>
-//           <label htmlFor="email">Username:</label>
-//           <input
-//             type="email"
-//             id="email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//           />
-//         </div>
-//         <div>
-//           <label htmlFor="password">Password:</label>
-//           <input
-//             type="text"
-//             id="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//           />
-//         </div>
-//         <button type="submit" disabled={loading === "pending"}> {/* Disable the button when loading */}
-//           {loading ==="pending" ? "Logging in..." : "Login"}
-//         </button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default LoginForm;
-
 import { useEffect } from "react";
 import { login } from "../../../Redux/features/User/userApi";
 
@@ -107,7 +35,6 @@ const LoginForm = () => {
             password: Yup.string().max(255).required("Password is required")
           })}
           onSubmit={async (values) => {
-            console.log(values);
             try {
               dispatch(
                 login({
@@ -121,14 +48,6 @@ const LoginForm = () => {
               console.log(err);
               toast.error(err?.data?.data?.message || err.error);
             }
-            // await dispatch(setLoader(true));
-            // dispatch(
-            //     login({
-            //         email: values.email,
-            //         password: values.password,
-            //         navigate: navigate
-            //     })
-            // );
           }}
         >
           {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (

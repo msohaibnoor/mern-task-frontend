@@ -31,7 +31,6 @@ export const deleteCar = createAsyncThunk("deleteCar", async ({ apiEndpoint, fet
 
 export const getCars = createAsyncThunk("getCars", async ({ apiEndpoint }, thunkAPI) => {
   try {
-    console.log("<<<<");
     const response = await axiosInstance.get(apiEndpoint);
 
     return response.data;

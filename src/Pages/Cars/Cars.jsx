@@ -39,7 +39,6 @@ function App() {
         setLoading(false);
       });
   };
-  console.log(pageNumber);
   useEffect(() => {
     fetchCars();
   }, [pageNumber]);

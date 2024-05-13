@@ -61,7 +61,6 @@ export const categorySlice = createSlice({
         state.loading = "pending";
       })
       .addCase(getCars.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.cars = action.payload;
         state.loading = "succeeded";
       })

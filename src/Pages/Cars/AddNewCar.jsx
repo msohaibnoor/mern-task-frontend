@@ -90,7 +90,6 @@ const AddNewCategory = () => {
       });
     }
   }, [car]);
-  console.log(categories);
   return (
     <div className="max-w-md mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
       <h2 className="text-2xl font-bold mb-4">{car ? "Update Car" : "Add New Car"}</h2>

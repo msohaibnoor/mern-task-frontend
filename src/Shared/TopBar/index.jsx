@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { customLogout } from "../../Redux/features/User/userSlice";
 import { Link, useLocation } from "react-router-dom";
-// import { customLogout } from "./path/to/userSlice"; // Adjust the path to your user slice
 
 const TopBar = ({ isPublic, isGuest, isPrivate, isAuth }) => {
   const dispatch = useDispatch();
