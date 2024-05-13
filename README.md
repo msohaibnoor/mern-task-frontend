@@ -6,7 +6,7 @@ Welcome to the Car Management System project! This system provides a platform fo
 
 - **Frontend**: React.js, Tailwind CSS, Formik, Yup, Redux Toolkit
 - **Backend**: Node.js, Express.js, JWT
-- **Database**: [Your preferred database system]
+- **Database**: MongoDB
 
 ## Project Setup
 
@@ -36,26 +36,10 @@ Welcome to the Car Management System project! This system provides a platform fo
 6. **Security**: Implements protection against XSS (Cross-Site Scripting) and utilizes JWT (JSON Web Tokens) for authentication.
 7. **Data Validation**: Frontend and backend validations are implemented for create and update modules to ensure data integrity.
 
-## Folder Structure
-
-root/
-│
-├── backend/ # Backend codebase
-│ ├── controllers/ # Request handlers
-│ ├── models/ # Database models
-│ ├── routes/ # API endpoints
-│ └── utils/ # Utility functions
-│
-└── frontend/ # Frontend codebase
-├── components/ # Reusable UI components
-├── pages/ # Page components
-├── redux/ # Redux setup (actions, reducers, store)
-├── services/ # API service integration
-└── styles/ # Styling files (e.g., Tailwind CSS)
 
 ## Contributors
 
-- [Your Name](https://github.com/your-username)
+- [Sohaib Noor](https://github.com/msohaibnoor)
 
 ## License
 
