@@ -20,7 +20,7 @@ function Categories() {
     dispatch(
       deleteCategory({
         apiEndpoint: `/categories/${id}`,
-        fetchCategories,
+        fetchCategories
       })
     );
   };
@@ -48,7 +48,7 @@ function Categories() {
     () => [
       {
         Header: "Category Name",
-        accessor: "name",
+        accessor: "name"
       },
 
       {
@@ -68,12 +68,12 @@ function Categories() {
               Delete
             </button>
           </div>
-        ),
-      },
+        )
+      }
     ],
     []
   );
-  console.log({pageNumber});
+  console.log({ pageNumber });
   return (
     <div className="mt-8 flex justify-center items-center flex-col">
       <div className="w-4/5 flex items-center justify-between mb-5">

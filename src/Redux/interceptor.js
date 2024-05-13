@@ -3,7 +3,7 @@ import { customLogout } from "./features/User/userSlice";
 import { toast } from "react-toastify";
 
 const axiosInstance = axios.create({
-  baseURL: `${process.env.REACT_APP_BACKEND_BASE_URL}`,
+  baseURL: `${process.env.REACT_APP_BACKEND_BASE_URL}`
 });
 
 var storeModule;
@@ -41,8 +41,8 @@ axiosInstance.interceptors.response.use(
   },
   (error) => {
     const { response } = error;
-    console.log("error   response")
-    console.log(response)
+    console.log("error   response");
+    console.log(response);
     toast.error(response?.data?.message);
 
     if (response && response.status === 401) {

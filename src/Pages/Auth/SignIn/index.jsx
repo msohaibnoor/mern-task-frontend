@@ -82,17 +82,16 @@ import InputField from "../../../Shared/InputField";
 const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   const { loading, error } = useSelector((state) => state.user);
   const user = useSelector((state) => state.user);
 
-  
-useEffect(() => {
-  if(user.user){
-    // setRedirectToDashboard(true)
-    navigate('/dashboard')
-  }
-},[user])
+  useEffect(() => {
+    if (user.user) {
+      // setRedirectToDashboard(true)
+      navigate("/dashboard");
+    }
+  }, [user]);
   return (
     <div className="flex justify-center items-start sm:items-center   overflow-hidden   bg-gray-50 dark:bg-gray-900 ">
       <div className="mb-4 rounded-none sm:rounded-lg shadow mt-16 sm:mt-32 p-8 w-full sm:w-1/2 md:w-1/3 ">
@@ -101,14 +100,11 @@ useEffect(() => {
           enableReinitialize
           initialValues={{
             email: "",
-            password: "",
+            password: ""
           }}
           validationSchema={Yup.object().shape({
-            email: Yup.string()
-              .email("Please enter valid email")
-              .max(255)
-              .required("Email is required"),
-            password: Yup.string().max(255).required("Password is required"),
+            email: Yup.string().email("Please enter valid email").max(255).required("Email is required"),
+            password: Yup.string().max(255).required("Password is required")
           })}
           onSubmit={async (values) => {
             console.log(values);
@@ -135,15 +131,7 @@ useEffect(() => {
             // );
           }}
         >
-          {({
-            errors,
-            handleBlur,
-            handleChange,
-            handleSubmit,
-            isSubmitting,
-            touched,
-            values,
-          }) => (
+          {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
             <form noValidate onSubmit={handleSubmit}>
               <div className="mb-4">
                 <InputField
@@ -180,10 +168,7 @@ useEffect(() => {
                 </button>
                 <p className="text-sm text-gray-700">
                   Don't have an account?{" "}
-                  <Link
-                    className="text-gray-900 font-medium underline hover:underline"
-                    to="/sign-up"
-                  >
+                  <Link className="text-gray-900 font-medium underline hover:underline" to="/sign-up">
                     Sign Up
                   </Link>
                 </p>

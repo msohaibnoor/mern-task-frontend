@@ -1,27 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  updateCategory,
-  deleteCategory,
-  getCars,
-  addCategory,
-  getCategory
-} from "./categoryApi";
+import { updateCategory, deleteCategory, getCars, addCategory, getCategory } from "./categoryApi";
 import { toast } from "react-toastify";
 
 export const categorySlice = createSlice({
   name: "categories",
   initialState: {
     categories: null,
-    category:null,
+    category: null,
     loading: "idle",
-    error: null,
+    error: null
   },
-  reducers :{
+  reducers: {
     clearCategory: (state) => {
       state.category = null;
-    },
+    }
   },
- 
+
   extraReducers: (builder) => {
     builder
       .addCase(addCategory.pending, (state) => {
@@ -38,7 +32,7 @@ export const categorySlice = createSlice({
         state.loading = "pending";
       })
       .addCase(getCategory.fulfilled, (state, action) => {
-        state.category = action.payload
+        state.category = action.payload;
         state.loading = "succeeded";
       })
       .addCase(getCategory.rejected, (state) => {
@@ -67,14 +61,14 @@ export const categorySlice = createSlice({
         state.loading = "pending";
       })
       .addCase(getCars.fulfilled, (state, action) => {
-        console.log(action.payload)
+        console.log(action.payload);
         state.cars = action.payload;
         state.loading = "succeeded";
       })
       .addCase(getCars.rejected, (state) => {
         state.loading = "failed";
       });
-  },
+  }
 });
 
 export const { clearCategory } = categorySlice.actions;

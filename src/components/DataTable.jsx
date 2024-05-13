@@ -13,14 +13,14 @@ const DataTable = ({ columns, data, pageNumber, setPageNumber, limit, pageCount 
     canPreviousPage,
     pageOptions,
     prepareRow,
-    state: { pageIndex },
+    state: { pageIndex }
   } = useTable(
     {
       columns,
       data,
       initialState: { pageIndex: pageNumber, pageSize: limit }, // Start from first page
       manualPagination: true, // Disable automatic pagination handling by react-table
-      pageCount:pageCount,
+      pageCount: pageCount
     },
     useSortBy,
     usePagination
@@ -42,27 +42,17 @@ const DataTable = ({ columns, data, pageNumber, setPageNumber, limit, pageCount 
     <div className="w-full flex justify-center">
       <div className="w-4/5">
         <div className="overflow-x-auto">
-          <table
-            {...getTableProps()}
-            className="w-full table-auto border-collapse"
-          >
+          <table {...getTableProps()} className="w-full table-auto border-collapse">
             <thead>
               {headerGroups.map((headerGroup) => (
-                <tr
-                  {...headerGroup.getHeaderGroupProps()}
-                  className="bg-gray-200"
-                >
+                <tr {...headerGroup.getHeaderGroupProps()} className="bg-gray-200">
                   {headerGroup.headers.map((column) => (
                     <th
                       {...column.getHeaderProps(column.getSortByToggleProps())}
                       className="py-2 px-4 text-left font-semibold"
                     >
                       {column.render("Header")}
-                      {column.isSorted
-                        ? column.isSortedDesc
-                          ? " ↓"
-                          : " ↑"
-                        : ""}
+                      {column.isSorted ? (column.isSortedDesc ? " ↓" : " ↑") : ""}
                     </th>
                   ))}
                 </tr>
@@ -72,10 +62,7 @@ const DataTable = ({ columns, data, pageNumber, setPageNumber, limit, pageCount 
               {page.map((row) => {
                 prepareRow(row);
                 return (
-                  <tr
-                    {...row.getRowProps()}
-                    className="border-t border-gray-200"
-                  >
+                  <tr {...row.getRowProps()} className="border-t border-gray-200">
                     {row.cells.map((cell) => {
                       return (
                         <td {...cell.getCellProps()} className="py-2 px-4">
@@ -95,7 +82,7 @@ const DataTable = ({ columns, data, pageNumber, setPageNumber, limit, pageCount 
               //   previousPage();
               // }}
               onClick={handlePreviousPage}
-              disabled={!canPreviousPage  || pageNumber === 0}
+              disabled={!canPreviousPage || pageNumber === 0}
               className="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg focus:outline-none"
             >
               Previous
@@ -112,7 +99,7 @@ const DataTable = ({ columns, data, pageNumber, setPageNumber, limit, pageCount 
               //   nextPage();
               // }}
               onClick={handleNextPage}
-              disabled={!canNextPage  || pageNumber === pageCount}
+              disabled={!canNextPage || pageNumber === pageCount}
               className="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg focus:outline-none"
             >
               Next

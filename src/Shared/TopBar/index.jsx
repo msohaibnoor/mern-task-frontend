@@ -27,7 +27,8 @@ const TopBar = ({ isPublic, isGuest, isPrivate, isAuth }) => {
         <div className="flex flex-col gap-4 sm:flex-row sm:gap-0">
           {user?.user ? (
             <>
-              <Link to="/dashboard"
+              <Link
+                to="/dashboard"
                 className="border mr-8 border-gray-500 bg-white hover:bg-gray-200 text-gray-800 py-2 px-4 rounded"
               >
                 Dashboard
@@ -41,9 +42,8 @@ const TopBar = ({ isPublic, isGuest, isPrivate, isAuth }) => {
             </>
           ) : (
             <Link to="/sign-in">
-              <button
-               className="border-2 border-gray-500 bg-white hover:bg-gray-200 text-gray-800 py-2 px-4 rounded">
-                 Login
+              <button className="border-2 border-gray-500 bg-white hover:bg-gray-200 text-gray-800 py-2 px-4 rounded">
+                Login
               </button>
             </Link>
           )}

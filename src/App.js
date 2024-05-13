@@ -12,7 +12,7 @@ function App() {
   return (
     <React.Fragment>
       <Router>
-      <ToastContainer autoClose={2000} />
+        <ToastContainer autoClose={2000} />
 
         <Routes>
           {routes.map((route, index) => {
@@ -33,17 +33,9 @@ function App() {
                     >
                       <Suspense fallback={<div>loading...</div>}>
                         {!route.isPublic ? (
-                          <PrivateRoute
-                            props={route}
-                            role={route?.role}
-                            Component={Component}
-                          />
+                          <PrivateRoute props={route} role={route?.role} Component={Component} />
                         ) : (
-                          <PublicRoute
-                            props={route}
-                            role={route?.role}
-                            Component={Component}
-                          />
+                          <PublicRoute props={route} role={route?.role} Component={Component} />
                         )}
                       </Suspense>
                     </GeneralLayout>

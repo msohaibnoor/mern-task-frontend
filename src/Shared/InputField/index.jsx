@@ -1,16 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const InputField = ({
-  onChange,
-  type,
-  value,
-  name,
-  id,
-  placeholder,
-  error,
-  onBlur,
-  touched,
-}) => {
+const InputField = ({ onChange, type, value, name, id, placeholder, error, onBlur, touched }) => {
   // console.log(touched);
   // console.log(error);
   return (

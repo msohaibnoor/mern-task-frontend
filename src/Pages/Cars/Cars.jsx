@@ -23,12 +23,12 @@ function App() {
     );
   };
   const handleEdit = (car) => {
-    navigate(`/edit-car/${car._id}`, {state: car});
+    navigate(`/edit-car/${car._id}`, { state: car });
   };
 
   const fetchCars = () => {
     axios
-      .get(`/cars?page=${pageNumber+1}&limit=${limit}`)
+      .get(`/cars?page=${pageNumber + 1}&limit=${limit}`)
       .then((response) => {
         setCars(response.data.cars);
         setPageCount(response.data.pageCount);
@@ -38,8 +38,8 @@ function App() {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }
-  console.log(pageNumber)
+  };
+  console.log(pageNumber);
   useEffect(() => {
     fetchCars();
   }, [pageNumber]);
@@ -48,23 +48,23 @@ function App() {
     () => [
       {
         Header: "Category",
-        accessor: "category",
+        accessor: "category"
       },
       {
         Header: "Make",
-        accessor: "make",
+        accessor: "make"
       },
       {
         Header: "Model",
-        accessor: "model",
+        accessor: "model"
       },
       {
         Header: "Color",
-        accessor: "color",
+        accessor: "color"
       },
       {
         Header: "RegistrationNo",
-        accessor: "registrationNo",
+        accessor: "registrationNo"
       },
       {
         Header: "Actions",
@@ -83,8 +83,8 @@ function App() {
               Delete
             </button>
           </div>
-        ),
-      },
+        )
+      }
     ],
     []
   );
@@ -93,7 +93,10 @@ function App() {
       <div className="w-4/5 flex items-center justify-between mb-5">
         <h1 className="text-3xl text-center mr-4">Cars</h1>
         <div>
-          <Link to={'/add-new-car'} className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded">
+          <Link
+            to={"/add-new-car"}
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded"
+          >
             Add New Car
           </Link>
         </div>

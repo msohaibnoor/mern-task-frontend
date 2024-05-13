@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  login,
-  logout,
-  signUp,
-} from "./userApi";
+import { login, logout, signUp } from "./userApi";
 
 export const userSlice = createSlice({
   name: "user",
@@ -11,12 +7,12 @@ export const userSlice = createSlice({
     user: null,
     isGuest: false,
     loading: false,
-    error: null,
+    error: null
   },
   reducers: {
     customLogout: (state) => {
       state.user = null;
-    },
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -24,11 +20,11 @@ export const userSlice = createSlice({
         state.loading = "pending";
       })
       .addCase(login.fulfilled, (state, action) => {
-        console.log('payloaddd')
-        console.log(action.payload)
+        console.log("payloaddd");
+        console.log(action.payload);
         state.loading = "succeeded";
         state.isGuest = false;
-        state.user = {...action.payload.user,  tokens : action.payload.tokens};
+        state.user = { ...action.payload.user, tokens: action.payload.tokens };
       })
       .addCase(login.rejected, (state, action) => {
         state.loading = "failed";
@@ -55,9 +51,8 @@ export const userSlice = createSlice({
       })
       .addCase(signUp.rejected, (state) => {
         state.loading = "failed";
-      })
-      
-  },
+      });
+  }
 });
 
 export const { customLogout } = userSlice.actions;

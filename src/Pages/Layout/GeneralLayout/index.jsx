@@ -6,12 +6,7 @@ const GeneralLayout = (props) => {
   return (
     <React.Fragment>
       <Container fluid>
-        <TopBar
-          isPublic={props.isPublic}
-          isGuest={props.isGuest}
-          isPrivate={props.isPrivate}
-          isAuth={props.isAuth}
-        />
+        <TopBar isPublic={props.isPublic} isGuest={props.isGuest} isPrivate={props.isPrivate} isAuth={props.isAuth} />
         <Container fluid>{props.children}</Container>
       </Container>
     </React.Fragment>
