@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Car Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Car Management System project! This system provides a platform for users to manage and categorize cars, with features including user authentication, CRUD operations for categories and cars, email notifications, and data validation.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **Frontend**: React.js, Tailwind CSS, Formik, Yup, Redux Toolkit
+- **Backend**: Node.js, Express.js, JWT
+- **Database**: [Your preferred database system]
 
-### `npm start`
+## Project Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository.
+2. Navigate to the `frontend` directory.
+3. Install dependencies using `npm install`.
+4. Start the development server with `npm start`.
 
-### `npm test`
+### Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Navigate to the `backend` directory.
+2. Install dependencies using `npm install`.
+3. Set up your database and configure the connection in `.env` file.
+4. Start the server with `npm start`.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Authentication**: Users can sign up and sign in securely.
+2. **Email Notifications**: Upon successful sign-up, users receive a welcome email with a randomly generated password.
+3. **Dashboard**: Provides a simple dashboard displaying the number of registered cars.
+4. **CRUD Operations**:
+   - Categories: Users can create, read, update, and delete categories.
+   - Cars: Users can create, read, update, and delete cars, with options to select a category from a dropdown.
+5. **Data Tables**: Utilizes data tables for sorting and pagination for enhanced user experience.
+6. **Security**: Implements protection against XSS (Cross-Site Scripting) and utilizes JWT (JSON Web Tokens) for authentication.
+7. **Data Validation**: Frontend and backend validations are implemented for create and update modules to ensure data integrity.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Folder Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+root/
+│
+├── backend/ # Backend codebase
+│ ├── controllers/ # Request handlers
+│ ├── models/ # Database models
+│ ├── routes/ # API endpoints
+│ └── utils/ # Utility functions
+│
+└── frontend/ # Frontend codebase
+├── components/ # Reusable UI components
+├── pages/ # Page components
+├── redux/ # Redux setup (actions, reducers, store)
+├── services/ # API service integration
+└── styles/ # Styling files (e.g., Tailwind CSS)
 
-### `npm run eject`
+## Contributors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Your Name](https://github.com/your-username)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
